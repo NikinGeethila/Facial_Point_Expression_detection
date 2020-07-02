@@ -80,32 +80,18 @@ for typepath in (paths):
             imagepath = videopath + "/" + framelisting[frame]
             image = cv2.imread(imagepath)
             landmarks = get_landmark(image)
-            if counting < 1:
-                img = annotate_landmarks(image, landmarks)
-                imgplot = plt.imshow(img)
-                plt.show()
-            numpylandmarks = numpy.asarray(landmarks)
-            up = numpylandmarks[27][1] - 5
-            down = max(numpylandmarks[31][1], numpylandmarks[32][1], numpylandmarks[33][1], numpylandmarks[34][1],
-                       numpylandmarks[35][1]) + 5
-            left = numpylandmarks[31][0]
-            right = numpylandmarks[35][0]
-            segment_image = image[up:down, left:right]
-            if counting < 1:
-                img = annotate_landmarks(segment_image, landmarks)
-                imgplot = plt.imshow(img)
-                plt.show()
-                counting += 1
-            segment_image = cv2.resize(segment_image, (sizeH, sizeV), interpolation=cv2.INTER_AREA)
-            segment_image = cv2.cvtColor(segment_image, cv2.COLOR_BGR2GRAY)
 
-            segment_frames.append(segment_image)
+
+            segment_frames.append(landmarks)
 
         segment_frames = numpy.asarray(segment_frames)
+        print(1,segment_frames.shape)
         segment_videoarray = numpy.rollaxis(numpy.rollaxis(segment_frames, 2, 0), 2, 0)
+        print(2,segment_videoarray.shape)
         segment_training_list.append(segment_videoarray)
 
 segment_training_list = numpy.asarray(segment_training_list)
+print(3,segment_training_list.shape)
 
 segment_trainingsamples = len(segment_training_list)
 
