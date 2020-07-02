@@ -79,11 +79,11 @@ for typepath in (paths):
             landmarks = get_landmark(image)
             segment_frames.append(landmarks)
 
-            segment_frames = numpy.asarray(segment_frames)
-            print(1, segment_frames.shape)
-            segment_videoarray = numpy.rollaxis(numpy.rollaxis(segment_frames, 2, 0), 2, 0)
-            print(2, segment_videoarray.shape)
-            segment_training_list.append(segment_videoarray)
+        segment_frames = numpy.asarray(segment_frames)
+        print(1, segment_frames.shape)
+        segment_videoarray = numpy.rollaxis(numpy.rollaxis(segment_frames, 2, 0), 2, 0)
+        print(2, segment_videoarray.shape)
+        segment_training_list.append(segment_videoarray)
 
 segment_training_list = numpy.asarray(segment_training_list)
 print(3, segment_training_list.shape)
