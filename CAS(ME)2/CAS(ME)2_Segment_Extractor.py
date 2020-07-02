@@ -47,8 +47,8 @@ surprisepath = '../../../Datasets/CAS(ME)2_categorical/Surprise/'
 othersepath = '../../../Datasets/CAS(ME)2_categorical/others/'
 
 segmentName = 'RightEye'
-sizeH=32
-sizeV=32
+sizeH=68
+sizeV=2
 sizeD=30
 
 paths=[negativepath,positivepath, surprisepath]
@@ -80,9 +80,9 @@ for typepath in (paths):
             segment_frames.append(landmarks)
 
         segment_frames = numpy.asarray(segment_frames)
-        print(1, segment_frames.shape)
+        # print(1, segment_frames.shape)
         segment_videoarray = numpy.rollaxis(numpy.rollaxis(segment_frames, 2, 0), 2, 0)
-        print(2, segment_videoarray.shape)
+        # print(2, segment_videoarray.shape)
         segment_training_list.append(segment_videoarray)
 
 segment_training_list = numpy.asarray(segment_training_list)
