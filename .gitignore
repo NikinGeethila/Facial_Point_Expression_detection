@@ -1,1 +1,17 @@
+**/SMIC/weights_late_microexpfusenet/
+**/SMIC/weights_SMIC/
+**/SMIC/numpy_validation_datasets/
+**/SMIC/numpy_training_datasets/
 **/.idea/
+**/CAS(ME)2/weights_late_microexpfusenet/
+**/CAS(ME)2/weights_CAS(ME)2/
+**/CAS(ME)2/numpy_validation_datasets/
+**/CAS(ME)2/numpy_training_datasets/
+**/SAMM/weights_late_microexpfusenet/
+**/SAMM/weights_SAMM/
+**/SAMM/numpy_validation_datasets/
+**/SAMM/numpy_training_datasets/
+**/CASMEII/weights_late_microexpfusenet/
+**/CASMEII/weights_CASMEII/
+**/CASMEII/numpy_validation_datasets/
+**/CASMEII/numpy_training_datasets/
