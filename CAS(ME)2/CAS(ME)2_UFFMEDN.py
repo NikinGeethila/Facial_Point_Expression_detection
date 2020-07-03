@@ -21,14 +21,14 @@ def evaluate(segment_train_images, segment_validation_images, segment_train_labe
     model = Sequential()
     #model.add(ZeroPadding3D((2,2,0)))
     model.add(
-        Convolution3D(32, (20, 2,9), strides=(10, 1, 3), input_shape=(1, sizeH, sizeV, sizeD), padding='Same'))
+        Convolution3D(32, (5, 2,9), strides=1, input_shape=(1, sizeH, sizeV, sizeD), padding='Same'))
 
     model.add(PReLU())
     # model.add(Dropout(0.5))
-    # model.add(Convolution3D(32, (3, 1, 3), strides=1, padding='Same'))
-    # model.add(PReLU())
+    model.add(Convolution3D(32, (3, 1, 3), strides=1, padding='Same'))
+    model.add(PReLU())
     # model.add(Dropout(0.5))
-    model.add(MaxPooling3D(pool_size=(3, 3, 3)))
+    model.add(MaxPooling3D(pool_size=(3, 1, 3)))
     model.add( PReLU())
     # model.add(Dropout(0.5))
     model.add(Flatten())
