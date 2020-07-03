@@ -40,18 +40,19 @@ def annotate_landmarks(img, landmarks, font_scale=0.4):
         cv2.circle(img, pos, 3, color=(0, 255, 255))
     return img
 
+path='../../CASMEII_categorical/'
 
-disgustpath = '../../../Datasets/CASMEII_categorical/disgust/'
-# fearpath = '../../../Datasets/CASMEII_categorical/fear/'
-happinesspath = '../../../Datasets/CASMEII_categorical/happiness/'
-otherspath = '../../../Datasets/CASMEII_categorical/others/'
-repressionpath = '../../../Datasets/CASMEII_categorical/repression/'
+disgustpath = path+'disgust/'
+# fearpath = '../../CASMEII_categorical/fear/'
+happinesspath = path+'happiness/'
+otherspath = path+'others/'
+repressionpath = path+'epression/'
 # sadnesspath = '../../../Datasets/CASMEII_categorical/sadness/'
-surprisepath = '../../../Datasets/CASMEII_categorical/surprise/'
+surprisepath = path+'surprise/'
 
-segmentName = 'Nose'
-sizeH=32
-sizeV=32
+segmentName = 'FullFace'
+sizeH=68
+sizeV=2
 sizeD=30
 
 paths=[disgustpath,  happinesspath,otherspath,repressionpath,surprisepath]
@@ -85,9 +86,9 @@ for typepath in (paths):
             segment_frames.append(landmarks)
 
         segment_frames = numpy.asarray(segment_frames)
-        print(1,segment_frames.shape)
+        # print(1,segment_frames.shape)
         segment_videoarray = numpy.rollaxis(numpy.rollaxis(segment_frames, 2, 0), 2, 0)
-        print(2,segment_videoarray.shape)
+        # print(2,segment_videoarray.shape)
         segment_training_list.append(segment_videoarray)
 
 segment_training_list = numpy.asarray(segment_training_list)
