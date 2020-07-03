@@ -46,7 +46,7 @@ positivepath = '../../../Datasets/CAS(ME)2_categorical/Positive/'
 surprisepath = '../../../Datasets/CAS(ME)2_categorical/Surprise/'
 othersepath = '../../../Datasets/CAS(ME)2_categorical/others/'
 
-segmentName = 'RightEye'
+segmentName = 'FullFace'
 sizeH=68
 sizeV=2
 sizeD=30
