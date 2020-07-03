@@ -46,7 +46,7 @@ disgustpath = path+'disgust/'
 # fearpath = '../../CASMEII_categorical/fear/'
 happinesspath = path+'happiness/'
 otherspath = path+'others/'
-repressionpath = path+'epression/'
+repressionpath = path+'repression/'
 # sadnesspath = '../../../Datasets/CASMEII_categorical/sadness/'
 surprisepath = path+'surprise/'
 
