@@ -41,14 +41,14 @@ def annotate_landmarks(img, landmarks, font_scale=0.4):
     return img
 
 
-angerpath = '../../../Datasets/SAMM_categorical/Anger/'
-sadnesspath = '../../../Datasets/SAMM_categorical/Sadness/'
-happinesspath = '../../../Datasets/SAMM_categorical/Happiness/'
-disgustpath = '../../../Datasets/SAMM_categorical/Disgust/'
-fearpath = '../../../Datasets/SAMM_categorical/Fear/'
-surprisepath = '../../../Datasets/SAMM_categorical/Surprise/'
-contemptpath = '../../../Datasets/SAMM_categorical/Contempt/'
-otherpath = '../../../Datasets/SAMM_categorical/Other/'
+angerpath = '../../SAMM_categorical/Anger/'
+sadnesspath = '../../SAMM_categorical/Sadness/'
+happinesspath = '../../SAMM_categorical/Happiness/'
+disgustpath = '../../SAMM_categorical/Disgust/'
+fearpath = '../../SAMM_categorical/Fear/'
+surprisepath = '../../SAMM_categorical/Surprise/'
+contemptpath = '../../SAMM_categorical/Contempt/'
+otherpath = '../../SAMM_categorical/Other/'
 segmentName='FullFace'
 sizeH=68
 sizeV=2
