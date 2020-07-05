@@ -40,17 +40,17 @@ def annotate_landmarks(img, landmarks, font_scale=0.4):
         cv2.circle(img, pos, 3, color=(0, 255, 255))
     return img
 
-
-negativepath = '../../../Datasets/SIMC_E_categorical/Negative/'
-positivepath = '../../../Datasets/SIMC_E_categorical/Positive/'
-surprisepath = '../../../Datasets/SIMC_E_categorical/Surprise/'
+path='../../SIMC_E_categorical/'
+negativepath = path+'negative/'
+positivepath =path+'positive/'
+surprisepath = path+'surprise/'
 
 segmentName='FullFace'
 sizeH=68
 sizeV=2
 sizeD=30
 
-
+paths=[negativepath,positivepath,surprisepath]
 segment_training_list = []
 counting = 0
 for typepath in (paths):
