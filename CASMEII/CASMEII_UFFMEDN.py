@@ -18,27 +18,25 @@ class myCallback(Callback):
 
 def evaluate(segment_train_images, segment_validation_images, segment_train_labels, segment_validation_labels,test_index ):
 
+
     model = Sequential()
     #model.add(ZeroPadding3D((2,2,0)))
     model.add(
-        Convolution3D(32, (5, 2, 9), strides=1, input_shape=(1, sizeH, sizeV, sizeD), padding='Same'))
+        Convolution3D(32, (10, 2,9), strides=1, input_shape=(1, sizeH, sizeV, sizeD), padding='Same'))
 
     model.add(PReLU())
     # model.add(Dropout(0.5))
-    model.add(Convolution3D(32, (3, 1, 3), strides=1, padding='Same'))
-    model.add(PReLU())
-    # model.add(Dropout(0.5))
-    # model.add(MaxPooling3D(pool_size=(3, 1, 3)))
+    # model.add(Convolution3D(32, (3, 1, 3), strides=1, padding='Same'))
     # model.add(PReLU())
     # model.add(Dropout(0.5))
-
-    #1 - conv 2 - conv+max 3 - max
-
+    # model.add(MaxPooling3D(pool_size=(3, 1, 3)))
+    # model.add( PReLU())
+    # model.add(Dropout(0.5))
     model.add(Flatten())
     # model.add(Dense(1024, init='normal'))
     # model.add(Dropout(0.5))
     # model.add(Dense(128, init='normal'))
-    # model.add(Dropout(0.5))
+    # model.add(Dropou t(0.5))
     model.add(Dense(5, init='normal'))
     model.add(Dropout(0.5))
     model.add(Activation('softmax'))
@@ -49,8 +47,8 @@ def evaluate(segment_train_images, segment_validation_images, segment_train_labe
 
     filepath="weights_CAS(ME)2/weights-improvement"+str(test_index)+"-{epoch:02d}-{val_acc:.2f}.hdf5"
     checkpoint = ModelCheckpoint(filepath, monitor='val_acc', verbose=1, save_best_only=True, mode='max')
-    EarlyStop = EarlyStopping(monitor='val_acc', min_delta=0, patience=50, restore_best_weights=True, verbose=1, mode='max')
-    reduce = ReduceLROnPlateau(monitor='val_acc', factor=0.5, patience=30,cooldown=10, verbose=1,min_delta=0, mode='max',min_lr=0.0005)
+    EarlyStop = EarlyStopping(monitor='val_acc', min_delta=0, patience=100, restore_best_weights=True, verbose=1, mode='max')
+    reduce = ReduceLROnPlateau(monitor='val_acc', factor=0.5, patience=40,cooldown=10, verbose=1,min_delta=0, mode='max',min_lr=0.0005)
     callbacks_list = [ EarlyStop, reduce,myCallback()]
 
 
