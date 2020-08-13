@@ -41,14 +41,14 @@ def annotate_landmarks(img, landmarks, font_scale=0.4):
     return img
 
 path='../../SIMC_E_categorical/'
-negativepath = path+'negative/'
-positivepath =path+'positive/'
-surprisepath = path+'surprise/'
+negativepath = path+'Negative/'
+positivepath =path+'Positive/'
+surprisepath = path+'Surprise/'
 
 segmentName='FullFace'
 sizeH=68
 sizeV=2
-sizeD=30
+sizeD=141
 
 paths=[negativepath,positivepath,surprisepath]
 segment_training_list = []
