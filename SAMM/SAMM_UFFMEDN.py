@@ -1,6 +1,6 @@
 import numpy
 from sklearn.metrics import confusion_matrix
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import accuracy_score,f1_score
 from keras.models import Sequential, Model
 from keras.layers.core import Dense, Dropout, Activation, Flatten
 from keras.layers.convolutional import Convolution3D, MaxPooling3D, ZeroPadding3D
@@ -9,6 +9,8 @@ from keras.callbacks import ModelCheckpoint,EarlyStopping,ReduceLROnPlateau,Call
 from sklearn.model_selection import train_test_split,LeaveOneOut
 from keras import backend as K
 from keras.optimizers import Adam,SGD
+import os
+
 
 class myCallback(Callback):
     def on_epoch_end(self, epoch, logs={}):
