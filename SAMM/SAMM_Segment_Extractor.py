@@ -52,7 +52,7 @@ otherpath = '../../SAMM_categorical/Other/'
 segmentName='FullFace'
 sizeH=68
 sizeV=2
-sizeD=30
+sizeD=141
 
 paths=[angerpath,  happinesspath,surprisepath,contemptpath,otherpath]
 
