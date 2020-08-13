@@ -217,7 +217,7 @@ K.set_image_dim_ordering('th')
 segmentName='FullFace'
 sizeH=68
 sizeV=2
-sizeD=30
+sizeD=141
 testtype="kfold"
 ####################################
 
