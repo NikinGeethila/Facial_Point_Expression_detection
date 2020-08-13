@@ -49,7 +49,7 @@ othersepath = path+'others/'
 segmentName = 'FullFace'
 sizeH=68
 sizeV=2
-sizeD=30
+sizeD=141
 
 paths=[negativepath,positivepath, surprisepath]
 
