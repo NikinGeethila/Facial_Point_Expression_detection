@@ -24,3 +24,8 @@ F1-score: 0.3011311147064948
 ---------------------------
 accuracy: 0.37751004016064255
 F1-score: 0.30010170019765925
+---------------------------
+/home/student/Nikin/Facial_Point_Expression_detection/CASMEII kfold_FullFace_68x2x141
+---------------------------
+accuracy: 0.39357429718875503
+F1-score: 0.273969511577889
